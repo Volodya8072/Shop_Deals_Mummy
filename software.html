@@ -1,0 +1,1912 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bootstrap Сторінка</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick-theme.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanillajs-datepicker/dist/js/datepicker-full.min.js"></script>
+
+    <link rel="stylesheet" href="datepicker.material.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/vanillajs-datepicker/dist/css/datepicker.min.css"
+    />
+
+    <link rel="stylesheet" href="./styles.css" />
+   <script>
+      const totalPages = 59;
+      let currentPage = 1;
+      </script>
+  </head>
+  <body>
+    <div>
+      <div
+        class="red-gradient info-window align-items-center justify-content-center"
+      >
+        <p>
+          <a>ссилка</a>
+
+          текст якого омже бути 2
+        </p>
+      </div>
+      <div class="modal-window submit-modal-container mobile-container" id="submit-modal">
+        <div style="position: absolute; width: 100%; height: 100%;" class="close-btn"></div>
+        <div
+          class="modal-content submit-modal modal-shadow d-flex position-relative align-items-center justify-content-center"
+        >
+          <img src="./images/submit-modal.png" class="modal-submit-image" style="object-fit: cover;"/>
+
+          <img src="./images/close.svg" class="modal-close-btn close-btn scale-animation d-none d-lg-block"/>
+          <img src="./images/close-white.svg" class="modal-close-btn close-btn scale-animation d-lg-none"/>
+
+          <div class="w-100 submit-modal-wrapper mobile-container">
+            <h1 style="text-align: center; margin-bottom: 30px">Submit deal</h1>
+
+            <div class="w-100 modal-dropdown" style="cursor: pointer;">
+              <div
+              id="modal-category"
+                style="height: 44px; padding: 0 20px; border-radius: 10px"
+                class="d-flex justify-content-between align-items-center shadow w-100"
+              >
+                <p class="p2 submit-modal-dropdown-category" style="color: #bc0d2a">Choose a category</p>
+                <img
+                  src="./images/red-arrow.svg"
+                  style="max-width: 15px"
+                  class="dropdown-arrow"
+                />
+              </div>
+              <div
+                class="d-flex flex-column modal-dropdown-list"
+                style="gap: 5px; margin-top: 10px"
+              >
+                <p class="p2 submit-modal-dropdown-close" style="padding-left: 20px">
+                  Computers, Tablets & Network Hardware
+                </p>
+                <p class="p2 submit-modal-dropdown-close" style="padding-left: 20px">
+                  Cell Phones & Smartphones
+                </p>
+                <p class="p2 submit-modal-dropdown-close" style="padding-left: 20px">Another problem</p>
+                <p class="p2 submit-modal-dropdown-close" style="padding-left: 20px">Another problem</p>
+                <p class="p2 submit-modal-dropdown-close" style="padding-left: 20px">Another problem</p>
+                <p class="p2 submit-modal-dropdown-close" style="padding-left: 20px">Another problem</p>
+                <p class="p2 submit-modal-dropdown-close" style="padding-left: 20px">Another problem</p>
+                <p class="p2 submit-modal-dropdown-close" style="padding-left: 20px">Another problem</p>
+              </div>
+            </div>
+            <input
+
+            id="submit-modal-dropdown"
+              class="shadow modal-input"
+              placeholder="Add a link to the product"
+              style="margin-top: 10px"
+            />
+            <div
+            
+            class="d-flex mb-0 scale-animation red-btn d-flex justify-content-center align-items-center w-100 disabled submit-modal-button close-btn"
+              style="border-radius: 10px; color: #fff; margin-top: 35px"
+            >
+              <p class="mb-0 mt-0 p1 text-white">Submit deal</p>
+            </div>
+            <div></div>
+          </div>
+        </div>
+      </div>
+      <div id="mobile-menu" style="z-index: 30" class="mobile-menu">
+        <div id="close-mobile-menu"></div>
+        <div
+          id="mobile-menu-container"
+          class="menu"
+          style="overflow-y: auto; z-index: 30; position: relative"
+        >
+           <form
+            class="d-flex align-items-center gap-2 shadow text-muted w-100"
+            style="
+              border-radius: 10px;
+              max-height: 47px;
+              border: 1px solid #bc0d2a;
+              overflow: hidden;
+              padding: 3px 16px;
+            "
+          >
+             <input
+            id="searchInputMobile"
+              placeholder="search a deal"
+              class="w-100 h-100 red-input"
+              style="border: none; outline: none; color: #bc0d2a"
+            />
+            <button type="submit" for="searchInputMobile">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/03cc56861ca846867995cc7d09ca9afcccba67e409efd746e12f439cd62a2661?placeholderIfAbsent=true&apiKey=173c1c46b6b340998e62b695e4c8c026"
+              class="img-fluid"
+              style="width: 16px; aspect-ratio: 0.96"
+              alt="Search icon"
+            />
+          </button>
+          </form>
+
+          <div class="d-flex flex-column" style="margin-top: 30px; gap: 12px">
+            <a
+              href="index.html"
+              class="nav-shadow"
+              style="border-radius: 10px; padding: 2px 10px"
+            >
+              <p class="p2">Index</p>
+            </a>
+
+            <a
+            href="favourites.html"
+              class="nav-shadow"
+              style="border-radius: 10px; padding: 2px 10px"
+            >
+              <p class="p2">My favourites (0)</p>
+            </a>
+
+            <div
+              id="deals-department"
+              class="nav-shadow"
+              style="border-radius: 10px; padding: 2px 10px"
+            >
+              <div class="d-flex justify-content-between align-items-center scale-animation">
+                <p class="p1">Deals Department</p>
+                <img src="./images/black-arrow.svg" />
+              </div>
+              <div id="deals-cart" style="margin-top: 15px">
+                <a href="electronics.html" class="p4 mobile-nav d-block">
+                  Electronics &nbsp; <span style="color: #cccccc">+1</span>
+                </a>
+              </div>
+
+              <div>
+                <a href="home-&-garden.html" class="p4 mobile-nav d-block">
+                  Home & Garden &nbsp; <span style="color: #cccccc">+1</span>
+                </a>
+              </div>
+
+              <div>
+                <a href="tools-&-machinery.html" class="p4 mobile-nav d-block">
+                  Tools & Machinery &nbsp;
+                  <span style="color: #cccccc">+1</span>
+                </a>
+              </div>
+
+              <div>
+                <a href="toys.html" class="p4 mobile-nav d-block">
+                  Toys&nbsp; <span style="color: #cccccc">+1</span>
+                </a>
+              </div>
+              <div>
+                <a href="sporting-goods.html" class="p4 mobile-nav d-block">
+                  Sporting Goods &nbsp; <span style="color: #cccccc">+1</span>
+                </a>
+              </div>
+              <div>
+                <a
+                  href="clothing-shoes-&-accessories.html"
+                  class="p4 mobile-nav d-block"
+                >
+                  Clothing, Shoes & Accessories&nbsp;
+                  <span style="color: #cccccc">+1</span>
+                </a>
+              </div>
+              <div>
+                <a href="jewelry-&-watches.html" class="p4 mobile-nav d-block">
+                  Jewelry & Watches &nbsp;
+                  <span style="color: #cccccc">+1</span>
+                </a>
+              </div>
+              <div>
+                <a href="motors.html" class="p4 mobile-nav d-block">
+                  Motors &nbsp; <span style="color: #cccccc">+1</span>
+                </a>
+              </div>
+
+              <div style="margin-bottom: 15px">
+                <a href="software.html" class="p4 mobile-nav active d-block">
+                  Software &nbsp; <span style="color: #cccccc">+1</span>
+                </a>
+              </div>
+            </div>
+
+            <div
+              class="nav-shadow deal-calendar-wrapper"
+              style="border-radius: 10px; padding: 2px 10px;position: relative;width: 100%;"
+            >
+              <div
+                class="d-flex justify-content-between align-items-center deal-calendar scale-animation"
+                style="cursor: pointer; position: absolute; top: 0; width: 100%; left: 0;padding: 2px 10px;"
+              >
+                <p class="p2" style="white-space: nowrap">Deals calendar</p>
+           
+
+                <img src="./images/black-arrow.svg" class="deal-arrow"/>
+              </div>
+              <div style="margin-top: 0px;">
+                <input
+                placeholder="Deals calendar"
+                type="text"
+                id="datepicker1"
+                class="w-0"
+                style="transform: scale(0)"
+                readonly
+              />
+              </div>
+            </div>
+              <div
+            id="open-btn-mobile"
+              class="nav-shadow d-flex justify-content-between align-items-center scale-animation"
+              style="border-radius: 10px; padding: 2px 10px;"
+            >
+              <p class="p2">Submit a Deal</p>
+            </div>
+            <div
+              id="deals-for-us"
+              class="nav-shadow"
+              style="border-radius: 10px; padding: 2px 10px"
+            >
+                <div class="d-flex justify-content-between align-items-center scale-animation">
+                <div class="d-flex align-items-center" style="gap: 10px">
+                  <p class="p2 fw-bold">Showing deals for U.S</p>
+
+                  <img src="./images/american-flag.svg" class="flag" />
+                </div>
+
+                <img src="./images/black-arrow.svg" class="arrow" />
+              </div>
+
+               <div style="padding-top: 15px !important">
+                <a
+                href="#"
+                  class="p2"
+                  style="color: #5b5b5b; padding: 4px 2px; padding-top: 15px !important"
+                >
+                  Switch for CA deals
+                </a>
+              </div>
+            </div>
+          </div>
+          <div
+            class="d-flex w-100 justify-content-center"
+            style="gap: 25px; margin-top: 50px"
+          >
+            <img src="./images/Facebook.svg" />
+            <img src="./images/LinkedIn.svg" />
+            <img src="./images/Twiter.svg" />
+            <img src="./images/Pinterest.svg" />
+            <img src="./images/Mail.svg" />
+          </div>
+        </div>
+      </div>
+      <header
+        class="d-flex mx-auto justify-content-between justify-content-lg-center align-items-center desktop-container header-wrapper position-relative"
+        style="z-index: 1000; background-color: #fff"
+      >
+      <a href="index.html" class="position-relative w-100 logo">
+        <img src="./images/logo.svg" class="w-100 h-100 logo" />
+        <p class="p2 position-absolute logo-text"><span class="p1" style="color: #BC0D2A">+250</span> today`s new</p>
+      </a>
+        <div class="d-flex d-lg-none" style="gap: 40px">
+          <a href="favourites.html" class="position-relative">
+
+            <img src="./images/heard.svg" />
+
+            <p
+              style="
+                font-size: 10px;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                color: #fff;
+                transform: translate(-50%, -60%);
+              "
+            >
+              20
+            </p>
+          </a>
+          <div>
+            <img src="./images/burger.svg" id="burger" alt="burger icon" />
+          </div>
+        </div>
+
+    <form
+          class="d-none d-lg-flex align-items-center gap-2 px-3 py-3 text-xl bg-white rounded-xl shadow text-muted w-100"
+          style="border-radius: 12px; max-width: 435px; max-height: 47px"
+        >
+        
+          <input
+            id="searchInput"
+            placeholder="search"
+            class="w-100 h-100"
+            style="border: none; outline: none"
+          />
+          <button for="searchInput">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/03cc56861ca846867995cc7d09ca9afcccba67e409efd746e12f439cd62a2661?placeholderIfAbsent=true&apiKey=173c1c46b6b340998e62b695e4c8c026"
+              class="img-fluid"
+              style="width: 23px; aspect-ratio: 0.96"
+              alt="Search icon"
+            />
+          </button>
+        </form>
+        <div class="d-none d-lg-flex w-100 justify-content-between" style="gap: 7px">
+          <a 
+          href="favourites.html"
+            class="d-flex mb-0 mt-0 scale-animation red-btn"
+            style="border-radius: 10px; color: #fff"
+          >
+            <p class="mb-0 mt-0 p1 text-white">
+              My favourites &nbsp;<span class="p2 text-white">(0)</span>
+            </p>
+          </a>
+
+           <div
+          id="open-btn"
+            class="d-flex mb-0 mt-0 scale-animation red-btn"
+            style="border-radius: 10px; color: #fff"
+          >
+            <p class="mb-0 mt-0 p1 text-white">Submit deal</p>
+          </div>
+          <div
+            style="border-radius: 10px; color: #fff"
+            class="d-flex mb-0 mt-0 red-btn position-relative calendar-btn"
+          >
+            <p class="mb-0 mt-0 p1 text-white">Deals Calendar</p>
+            <input
+             style="
+                width: 0px;
+                height: 0px;
+                background-color: transparent;
+                opacity: 0;
+                transform: scale(0);
+              "
+              placeholder="Deals calendar"
+              type="text"
+              id="datepicker2"
+              readonly
+            />
+          </div>
+          <div
+            class="d-flex mb-0 mt-0 red-btn"
+            style="
+              border-radius: 10px;
+              color: #fff;
+              gap: 6px;
+              position: relative;
+            "
+            id="market-btn"
+          >
+            <p class="mb-0 mt-0 p1 text-white">USA Market</p>
+
+            <img src="./images/arrow.svg" />
+
+            <div
+              id="market-popup"
+              class="shadow"
+              style="
+                position: absolute;
+                top: 50px;
+                left: 50%;
+                width: 232px;
+                border: 1px solid #5b5b5b;
+                border-radius: 10px;
+                padding: 15px;
+                background: #fff;
+              "
+            >
+              <p class="p5" style="color: #5b5b5b !important">
+                Showing deals for U.S. Market now. We also can offer deals for
+                Canada Market.
+              </p>
+
+              <a href="#" class="p3" style="color: #bc0d2a">Switch to Canada</a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div
+        class="w-100 d-none d-lg-flex flex-column justify-content-center align-items-center position-relative"
+        style="padding-top: 28px; overflow: hidden; z-index: 3"
+      >
+        <div
+          class="w-100 desktop-container d-flex justify-content-between"
+          style="gap: 9px"
+        >
+          <a
+            href="index.html"
+            class="d-flex tab-shadow justify-content-center align-items-center close-tab first-element"
+          >
+              <p class="footer-link"
+            >
+              Index
+            </p>
+            <div class="tab-bottom"></div>
+          </a>
+
+          <a
+            href="electronics.html"
+            class="d-flex tab-shadow justify-content-center align-items-center close-tab"
+          >
+              <p class="footer-link"
+            >
+              Electronics
+            </p>
+            <p
+              class="p6"
+              style="color: #5b5b5b; position: absolute; top: 1px; right: 5px"
+            >
+              +25
+            </p>
+            <div class="tab-bottom"></div>
+          </a>
+
+          <a
+            href="home-&-garden.html"
+            class="d-flex tab-shadow justify-content-center align-items-center close-tab"
+          >
+              <p class="footer-link"
+            >
+              Home & Garden
+            </p>
+            <p
+              class="p6"
+              style="color: #5b5b5b; position: absolute; top: 1px; right: 5px"
+            >
+              +25
+            </p>
+            <div class="tab-bottom"></div>
+          </a>
+
+          <a
+            href="tools-&-machinery.html"
+            class="d-flex tab-shadow justify-content-center align-items-center close-tab"
+          >
+              <p class="footer-link"
+            >
+              Tools & Machinery
+            </p>
+            <p
+              class="p6"
+              style="color: #5b5b5b; position: absolute; top: 1px; right: 5px"
+            >
+              +25
+            </p>
+            <div class="tab-bottom"></div>
+          </a>
+
+          <a
+            href="toys.html"
+            class="d-flex tab-shadow justify-content-center align-items-center close-tab"
+          >
+              <p class="footer-link"
+            >
+              Toys
+            </p>
+            <p
+              class="p6"
+              style="color: #5b5b5b; position: absolute; top: 1px; right: 5px"
+            >
+              +25
+            </p>
+            <div class="tab-bottom"></div>
+          </a>
+
+          <a
+            href="sporting-goods.html"
+            class="d-flex tab-shadow justify-content-center align-items-center close-tab"
+          >
+              <p class="footer-link"
+            >
+              Sporting Go...
+            </p>
+            <p
+              class="p6"
+              style="color: #5b5b5b; position: absolute; top: 1px; right: 5px"
+            >
+              +25
+            </p>
+            <div class="tab-bottom"></div>
+          </a>
+
+          <a
+            href="clothing-shoes-&-accessories.html"
+            class="d-flex tab-shadow justify-content-center align-items-center close-tab"
+          >
+              <p class="footer-link"
+            >
+              Clothing, Shoes & Access...
+            </p>
+            <p
+              class="p6"
+              style="color: #5b5b5b; position: absolute; top: 1px; right: 5px"
+            >
+              +25
+            </p>
+            <div class="tab-bottom"></div>
+          </a>
+
+          <a
+            href="jewelry-&-watches.html"
+            class="d-flex tab-shadow justify-content-center align-items-center close-tab"
+          >
+              <p class="footer-link"
+            >
+              Jewelry & W...
+            </p>
+            <p
+              class="p6"
+              style="color: #5b5b5b; position: absolute; top: 1px; right: 5px"
+            >
+              +25
+            </p>
+            <div class="tab-bottom"></div>
+          </a>
+
+          <a
+            href="motors.html"
+            class="d-flex tab-shadow justify-content-center align-items-center close-tab"
+          >
+              <p class="footer-link"
+            >
+              Motors
+            </p>
+            <p
+              class="p6"
+              style="color: #5b5b5b; position: absolute; top: 1px; right: 5px"
+            >
+              +25
+            </p>
+            <div class="tab-bottom"></div>
+          </a>
+          <a
+            href="software.html"
+            class="d-flex tab-shadow justify-content-center align-items-center open-tab"
+          >
+              <p class="footer-link"
+            >
+              Software
+            </p>
+            <p
+              class="p6"
+              style="color: #5b5b5b; position: absolute; top: 1px; right: 5px"
+            >
+              +25
+            </p>
+            <div class="tab-bottom"></div>
+          </a>
+        </div>
+
+        <div class="w-100" style="background: #cccccc; height: 1px"></div>
+      </div>
+      <div class="mobile-container">
+        <div
+          class="w-100 h-100 d-flex justify-content-center align-items-center desktop-container"
+          style="min-height: 254px; background: #cccccc; margin-top: 33px"
+        >
+          <p class="p4">Contextual advertising</p>
+        </div>
+      </div>
+     
+
+      <div class="desktop-container mobile-container" style="margin-top: 15px">
+        <p class="p4" style="color: #5b5b5b">
+        <a href="index.html" style="color: #5b5b5b" class="scale-animation"> Index / </a> <span style="color: #bc0d2a">Software</span>
+        </p>
+      </div>
+
+
+      <div
+        class="d-flex flex-column flex-lg-row desktop-container"
+        style="margin-top: 15px; gap: 50px"
+      >
+        <div class="filter-wapper">
+          <div class="w-100 d-flex flex-column mobile-container" style="gap: 15px">
+            <div class="filter-shadow">
+              <div
+                class="filter-triger d-flex align-items-center justify-content-between"
+              >
+                <p class="p3">Subcategories</p>
+                <img src="./images/black-arrow.svg" class="arrow" />
+              </div>
+              <div
+                class="d-flex flex-column"
+                style="padding-left: 15px; margin-top: 25px; gap: 16px"
+              >
+                <div
+                  class="d-flex align-items-center justify-content-between w-100"
+                >
+                  <label
+                    class="custom-checkbox d-flex align-items-start"
+                    style="gap: 10px"
+                  >
+                    <input
+                      type="checkbox"
+                      id="checkbox"
+                      class="input-checkbox"
+                    />
+                    <span class="checkmark">
+                      <img
+                        class="check-icon"
+                        src="./images/check.svg"
+                        alt="checked"
+                      />
+                    </span>
+                    <p class="p4">All subcategories</p>
+                  </label>
+                </div>
+                <div
+                  class="d-flex align-items-center justify-content-between w-100"
+                >
+                  <label
+                    class="custom-checkbox d-flex align-items-start"
+                    style="gap: 10px"
+                  >
+                    <input
+                      type="checkbox"
+                      id="checkbox"
+                      class="input-checkbox"
+                    />
+                    <span class="checkmark">
+                      <img
+                        class="check-icon"
+                        src="./images/check.svg"
+                        alt="checked"
+                      />
+                    </span>
+                    <p class="p4">Business & Office</p>
+                  </label>
+                </div>
+
+                <div
+                  class="d-flex align-items-center justify-content-between w-100"
+                >
+                  <label
+                    class="custom-checkbox d-flex align-items-start"
+                    style="gap: 10px"
+                  >
+                    <input
+                      type="checkbox"
+                      id="checkbox"
+                      class="input-checkbox"
+                    />
+                    <span class="checkmark">
+                      <img
+                        class="check-icon"
+                        src="./images/check.svg"
+                        alt="checked"
+                      />
+                    </span>
+                    <p class="p4">Antivirus & Security</p>
+                  </label>
+                </div>
+                <div
+                  class="d-flex align-items-center justify-content-between w-100"
+                >
+                  <label
+                    class="custom-checkbox d-flex align-items-start"
+                    style="gap: 10px"
+                  >
+                    <input
+                      type="checkbox"
+                      id="checkbox"
+                      class="input-checkbox"
+                    />
+                    <span class="checkmark">
+                      <img
+                        class="check-icon"
+                        src="./images/check.svg"
+                        alt="checked"
+                      />
+                    </span>
+                    <p class="p4">Photography</p>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="filter-shadow w-100">
+              <div
+                class="filter-triger d-flex align-items-center justify-content-between"
+              >
+                <p class="p3">Filter 1</p>
+                <img src="./images/black-arrow.svg" class="arrow" />
+              </div>
+              <div
+                class="d-flex flex-column"
+                style="padding-left: 15px; margin-top: 20px; gap: 16px"
+              >
+                <div
+                  class="d-flex align-items-center justify-content-between w-100"
+                >
+                  <label
+                    class="custom-checkbox d-flex align-items-start"
+                    style="gap: 10px"
+                  >
+                    <input
+                      type="checkbox"
+                      id="checkbox"
+                      class="input-checkbox"
+                    />
+                    <span class="checkmark">
+                      <img
+                        class="check-icon"
+                        src="./images/check.svg"
+                        alt="checked"
+                      />
+                    </span>
+                    <p class="p4">Filter 1</p>
+                  </label>
+                </div>
+                <div
+                  class="d-flex align-items-center justify-content-between w-100"
+                >
+                  <label
+                    class="custom-checkbox d-flex align-items-start"
+                    style="gap: 10px"
+                  >
+                    <input
+                      type="checkbox"
+                      id="checkbox"
+                      class="input-checkbox"
+                    />
+                    <span class="checkmark">
+                      <img
+                        class="check-icon"
+                        src="./images/check.svg"
+                        alt="checked"
+                      />
+                    </span>
+                    <p class="p4">Filter 1</p>
+                  </label>
+                </div>
+                <div
+                  class="d-flex align-items-center justify-content-between w-100"
+                >
+                  <label
+                    class="custom-checkbox d-flex align-items-start"
+                    style="gap: 10px"
+                  >
+                    <input
+                      type="checkbox"
+                      id="checkbox"
+                      class="input-checkbox"
+                    />
+                    <span class="checkmark">
+                      <img
+                        class="check-icon"
+                        src="./images/check.svg"
+                        alt="checked"
+                      />
+                    </span>
+                    <p class="p4">Filter 1</p>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="filter-shadow w-100">
+              <div
+                class="filter-triger d-flex align-items-center justify-content-between"
+              >
+                <p class="p3">Price</p>
+                <img src="./images/black-arrow.svg" class="arrow" />
+              </div>
+              <div
+                class="d-flex flex-column"
+                style="margin-top: 18px; gap: 16px"
+              >
+                <input id="rangeInput" min="0" max="340" type="range" value="170" />
+
+               <div
+                  class="d-flex justify-content-between align-items-center"
+                  style="margin-top: 10px"
+                >
+                  <div
+                    class="d-flex align-items-center filter-shadow-box"
+                    style="
+                      padding: 0 10px;
+                      width: 85px;
+                      height: 33px;
+                      border-radius: 10px;
+                    "
+                  >
+                    <p class="p4" style="color: 5B5B5B">$0</p>
+                  </div>
+                  <div
+                    class="d-flex align-items-center filter-shadow-box"
+                    style="
+                      padding: 0 10px;
+                      width: 85px;
+                      height: 33px;
+                      border-radius: 10px;
+                    "
+                  >
+
+                  $<input type="number" id="output" min="0" max="100" value="50">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="d-flex mb-0 mt-0 red-btn justify-content-center align-items-center"
+              style="border-radius: 10px"
+            >
+              <p class="p1 text-white">Apply</p>
+            </div>
+
+            <p
+              class="p4 clear-filters-btn"
+              style="color: #5b5b5b; margin-top: 0px; cursor: pointer"
+            >
+              Clear Filters
+            </p>
+          </div>
+        </div>
+
+        <div>
+          <div class="w-100 justify-content-between grid-container h-100 mobile-cards-container">
+            <a
+              href="card.html?category=software"
+              class="w-100 h-100 card-shadow scale-animation card-container flag gray-card d-block"
+            >
+               <div class="d-flex justify-content-center align-items-center">
+              <img
+                src="./images/card-1.png"
+                class="w-100 h-100 main-image"
+                style="object-fit: cover"
+              />
+            </div>
+              <p
+                class="p1 cut-text"
+                style="margin-top: 10px; line-height: 28px"
+              >
+                DEWALT 20V MAX Cordless Drill and Impact Driver, Power...
+              </p>
+              <div
+                class="d-flex align-items-center justify-content-between position-relative"
+                style="margin-top: 10px"
+              >
+                <div>
+                  <p class="p4" style="color: #5b5b5b">Was:$239</p>
+                  <h2 class="">$129.00</h2>
+                </div>
+                <div class="active-flag">
+                  <img
+                    src="./images/grren-flag.svg"
+                    class="green-flag flag"
+                    style="opacity: 0; position: absolute; right: 0px"
+                  />
+                  <img
+                    src="./images/orange-flag.svg"
+                    class="orange-flag flag"
+                    style="opacity: 0; position: absolute; right: 0px"
+                  />
+                  <img
+                    src="./images/blue-flag.svg"
+                    class="blue-flag flag"
+                    style="opacity: 0; position: absolute; right: 0px"
+                  />
+                  <img
+                    src="./images/gray-flag.svg"
+                    class="gray-flag flag"
+                    style="position: absolute; right: 0px; opacity: 0"
+                  />
+                  <img
+                    src="./images/red-flag.svg
+"
+                    class="red-flag flag"
+                    style="position: absolute; right: 0px; opacity: 0"
+                  />
+                </div>
+              </div>
+
+              <div
+                class="card-border d-flex justify-content-between card-details shadow"
+               
+              >
+                <div
+                  class="d-flex justify-content-center align-items-center w-100 h-100 card-text-wrapper"
+                >
+                  <p class="p3 card-text" style="color: #00b224">
+                    Deal details
+                  </p>
+                </div>
+                <div
+                  class="card-background d-flex justify-content-center align-items-center"
+                  style="background: #00b224; padding: 15px"
+                >
+                  <p class="p3 card-box" style="color: #fff">10%</p>
+                </div>
+              </div>
+            </a>
+            <a
+              href="card.html?category=software"
+              class="w-100 h-100 card-shadow scale-animation card-container flag red-card d-block"
+            >
+               <div class="d-flex justify-content-center align-items-center">
+              <img
+                src="./images/card-1.png"
+                class="w-100 h-100 main-image"
+                style="object-fit: cover"
+              />
+            </div>
+              <p
+                class="p1 cut-text"
+                style="margin-top: 10px; line-height: 28px"
+              >
+                DEWALT 20V MAX Cordless Drill and Impact Driver, Power...
+              </p>
+              <div
+                class="d-flex align-items-center justify-content-between position-relative"
+                style="margin-top: 10px"
+              >
+                <div>
+                  <p class="p4" style="color: #5b5b5b">Was:$239</p>
+                  <h2 class="">$129.00</h2>
+                </div>
+                <div class="active-flag">
+                  <img
+                    src="./images/grren-flag.svg"
+                    class="green-flag flag"
+                    style="opacity: 0; position: absolute; right: 0px"
+                  />
+                  <img
+                    src="./images/orange-flag.svg"
+                    class="orange-flag flag"
+                    style="opacity: 0; position: absolute; right: 0px"
+                  />
+                  <img
+                    src="./images/blue-flag.svg"
+                    class="blue-flag flag"
+                    style="opacity: 0; position: absolute; right: 0px"
+                  />
+                  <img
+                    src="./images/gray-flag.svg"
+                    class="gray-flag flag"
+                    style="position: absolute; right: 0px; opacity: 0"
+                  />
+                  <img
+                    src="./images/red-flag.svg
+"
+                    class="red-flag flag"
+                    style="position: absolute; right: 0px; opacity: 0"
+                  />
+                </div>
+              </div>
+
+              <div
+                class="card-border d-flex justify-content-between card-details shadow"
+               
+              >
+               <div
+              class="d-flex justify-content-center align-items-center w-100 h-100 card-text-wrapper"
+            >
+              <p class="p3 card-text" style="color: #00b224">
+                Deal details
+              </p>
+            </div>
+                <div
+                  class="card-background d-flex justify-content-center align-items-center"
+                  style="background: #00b224; padding: 15px"
+                >
+                  <p class="p3 card-box" style="color: #fff">10%</p>
+                </div>
+              </div>
+            </a>
+            <a
+              href="card.html?category=software"
+              class="w-100 h-100 card-shadow scale-animation card-container flag green-card d-block"
+            >
+               <div class="d-flex justify-content-center align-items-center">
+              <img
+                src="./images/card-1.png"
+                class="w-100 h-100 main-image"
+                style="object-fit: cover"
+              />
+            </div>
+              <p
+                class="p1 cut-text"
+                style="margin-top: 10px; line-height: 28px"
+              >
+                DEWALT 20V MAX Cordless Drill and Impact Driver, Power...
+              </p>
+              <div
+                class="d-flex align-items-center justify-content-between position-relative"
+                style="margin-top: 10px"
+              >
+                <div>
+                  <p class="p4" style="color: #5b5b5b">Was:$239</p>
+                  <h2 class="">$129.00</h2>
+                </div>
+                <div class="active-flag">
+                  <img
+                    src="./images/grren-flag.svg"
+                    class="green-flag flag"
+                    style="opacity: 0; position: absolute; right: 0px"
+                  />
+                  <img
+                    src="./images/orange-flag.svg"
+                    class="orange-flag flag"
+                    style="opacity: 0; position: absolute; right: 0px"
+                  />
+                  <img
+                    src="./images/blue-flag.svg"
+                    class="blue-flag flag"
+                    style="opacity: 0; position: absolute; right: 0px"
+                  />
+                  <img
+                    src="./images/gray-flag.svg"
+                    class="gray-flag flag"
+                    style="position: absolute; right: 0px; opacity: 0"
+                  />
+                  <img
+                    src="./images/red-flag.svg
+"
+                    class="red-flag flag"
+                    style="position: absolute; right: 0px; opacity: 0"
+                  />
+                </div>
+              </div>
+
+              <div
+                class="card-border d-flex justify-content-between card-details shadow"
+               
+              >
+               <div
+              class="d-flex justify-content-center align-items-center w-100 h-100 card-text-wrapper"
+            >
+              <p class="p3 card-text" style="color: #00b224">
+                Deal details
+              </p>
+            </div>
+                <div
+                  class="card-background d-flex justify-content-center align-items-center"
+                  style="background: #00b224; padding: 15px"
+                >
+                  <p class="p3 card-box" style="color: #fff">10%</p>
+                </div>
+              </div>
+            </a>
+            <a
+              href="card.html?category=software"
+              class="w-100 h-100 card-shadow scale-animation card-container flag orange-card d-block"
+            >
+               <div class="d-flex justify-content-center align-items-center">
+              <img
+                src="./images/card-1.png"
+                class="w-100 h-100 main-image"
+                style="object-fit: cover"
+              />
+            </div>
+              <p
+                class="p1 cut-text"
+                style="margin-top: 10px; line-height: 28px"
+              >
+                DEWALT 20V MAX Cordless Drill and Impact Driver, Power...
+              </p>
+              <div
+                class="d-flex align-items-center justify-content-between position-relative"
+                style="margin-top: 10px"
+              >
+                <div>
+                  <p class="p4" style="color: #5b5b5b">Was:$239</p>
+                  <h2 class="">$129.00</h2>
+                </div>
+                <div class="active-flag">
+                  <img
+                    src="./images/grren-flag.svg"
+                    class="green-flag flag"
+                    style="opacity: 0; position: absolute; right: 0px"
+                  />
+                  <img
+                    src="./images/orange-flag.svg"
+                    class="orange-flag flag"
+                    style="opacity: 0; position: absolute; right: 0px"
+                  />
+                  <img
+                    src="./images/blue-flag.svg"
+                    class="blue-flag flag"
+                    style="opacity: 0; position: absolute; right: 0px"
+                  />
+                  <img
+                    src="./images/gray-flag.svg"
+                    class="gray-flag flag"
+                    style="position: absolute; right: 0px; opacity: 0"
+                  />
+                  <img
+                    src="./images/red-flag.svg
+"
+                    class="red-flag flag"
+                    style="position: absolute; right: 0px; opacity: 0"
+                  />
+                </div>
+              </div>
+
+              <div
+                class="card-border d-flex justify-content-between card-details shadow"
+               
+              >
+               <div
+              class="d-flex justify-content-center align-items-center w-100 h-100 card-text-wrapper"
+            >
+              <p class="p3 card-text" style="color: #00b224">
+                Deal details
+              </p>
+            </div>
+                <div
+                  class="card-background d-flex justify-content-center align-items-center"
+                  style="background: #00b224; padding: 15px"
+                >
+                  <p class="p3 card-box" style="color: #fff">10%</p>
+                </div>
+              </div>
+            </a>
+            <a
+              href="card.html?category=software"
+              class="w-100 h-100 card-shadow scale-animation card-container flag blue-card d-block"
+            >
+               <div class="d-flex justify-content-center align-items-center">
+              <img
+                src="./images/card-1.png"
+                class="w-100 h-100 main-image"
+                style="object-fit: cover"
+              />
+            </div>
+              <p
+                class="p1 cut-text"
+                style="margin-top: 10px; line-height: 28px"
+              >
+                DEWALT 20V MAX Cordless Drill and Impact Driver, Power...
+              </p>
+              <div
+                class="d-flex align-items-center justify-content-between position-relative"
+                style="margin-top: 10px"
+              >
+                <div>
+                  <p class="p4" style="color: #5b5b5b">Was:$239</p>
+                  <h2 class="">$129.00</h2>
+                </div>
+                <div class="active-flag">
+                  <img
+                    src="./images/grren-flag.svg"
+                    class="green-flag flag"
+                    style="opacity: 0; position: absolute; right: 0px"
+                  />
+                  <img
+                    src="./images/orange-flag.svg"
+                    class="orange-flag flag"
+                    style="opacity: 0; position: absolute; right: 0px"
+                  />
+                  <img
+                    src="./images/blue-flag.svg"
+                    class="blue-flag flag"
+                    style="opacity: 0; position: absolute; right: 0px"
+                  />
+                  <img
+                    src="./images/gray-flag.svg"
+                    class="gray-flag flag"
+                    style="position: absolute; right: 0px; opacity: 0"
+                  />
+                  <img
+                    src="./images/red-flag.svg
+"
+                    class="red-flag flag"
+                    style="position: absolute; right: 0px; opacity: 0"
+                  />
+                </div>
+              </div>
+
+              <div
+                class="card-border d-flex justify-content-between card-details shadow"
+               
+              >
+               <div
+              class="d-flex justify-content-center align-items-center w-100 h-100 card-text-wrapper"
+            >
+              <p class="p3 card-text" style="color: #00b224">
+                Deal details
+              </p>
+            </div>
+                <div
+                  class="card-background d-flex justify-content-center align-items-center"
+                  style="background: #00b224; padding: 15px"
+                >
+                  <p class="p3 card-box" style="color: #fff">10%</p>
+                </div>
+              </div>
+            </a>
+            <a
+              href="card.html?category=software"
+              class="w-100 h-100 card-shadow scale-animation card-container flag blue-card d-block"
+            >
+               <div class="d-flex justify-content-center align-items-center">
+              <img
+                src="./images/card-1.png"
+                class="w-100 h-100 main-image"
+                style="object-fit: cover"
+              />
+            </div>
+              <p
+                class="p1 cut-text"
+                style="margin-top: 10px; line-height: 28px"
+              >
+                DEWALT 20V MAX Cordless Drill and Impact Driver, Power...
+              </p>
+              <div
+                class="d-flex align-items-center justify-content-between position-relative"
+                style="margin-top: 10px"
+              >
+                <div>
+                  <p class="p4" style="color: #5b5b5b">Was:$239</p>
+                  <h2 class="">$129.00</h2>
+                </div>
+                <div class="active-flag">
+                  <img
+                    src="./images/grren-flag.svg"
+                    class="green-flag flag"
+                    style="opacity: 0; position: absolute; right: 0px"
+                  />
+                  <img
+                    src="./images/orange-flag.svg"
+                    class="orange-flag flag"
+                    style="opacity: 0; position: absolute; right: 0px"
+                  />
+                  <img
+                    src="./images/blue-flag.svg"
+                    class="blue-flag flag"
+                    style="opacity: 0; position: absolute; right: 0px"
+                  />
+                  <img
+                    src="./images/gray-flag.svg"
+                    class="gray-flag flag"
+                    style="position: absolute; right: 0px; opacity: 0"
+                  />
+                  <img
+                    src="./images/red-flag.svg
+"
+                    class="red-flag flag"
+                    style="position: absolute; right: 0px; opacity: 0"
+                  />
+                </div>
+              </div>
+
+              <div
+                class="card-border d-flex justify-content-between card-details shadow"
+               
+              >
+               <div
+              class="d-flex justify-content-center align-items-center w-100 h-100 card-text-wrapper"
+            >
+              <p class="p3 card-text" style="color: #00b224">
+                Deal details
+              </p>
+            </div>
+                <div
+                  class="card-background d-flex justify-content-center align-items-center"
+                  style="background: #00b224; padding: 15px"
+                >
+                  <p class="p3 card-box" style="color: #fff">10%</p>
+                </div>
+              </div>
+            </a>
+            <a
+              href="card.html?category=software"
+              class="w-100 h-100 card-shadow scale-animation card-container flag red-card d-block"
+            >
+               <div class="d-flex justify-content-center align-items-center">
+              <img
+                src="./images/card-1.png"
+                class="w-100 h-100 main-image"
+                style="object-fit: cover"
+              />
+            </div>
+              <p
+                class="p1 cut-text"
+                style="margin-top: 10px; line-height: 28px"
+              >
+                DEWALT 20V MAX Cordless Drill and Impact Driver, Power...
+              </p>
+              <div
+                class="d-flex align-items-center justify-content-between position-relative"
+                style="margin-top: 10px"
+              >
+                <div>
+                  <p class="p4" style="color: #5b5b5b">Was:$239</p>
+                  <h2 class="">$129.00</h2>
+                </div>
+                <div class="active-flag">
+                  <img
+                    src="./images/grren-flag.svg"
+                    class="green-flag flag"
+                    style="opacity: 0; position: absolute; right: 0px"
+                  />
+                  <img
+                    src="./images/orange-flag.svg"
+                    class="orange-flag flag"
+                    style="opacity: 0; position: absolute; right: 0px"
+                  />
+                  <img
+                    src="./images/blue-flag.svg"
+                    class="blue-flag flag"
+                    style="opacity: 0; position: absolute; right: 0px"
+                  />
+                  <img
+                    src="./images/gray-flag.svg"
+                    class="gray-flag flag"
+                    style="position: absolute; right: 0px; opacity: 0"
+                  />
+                  <img
+                    src="./images/red-flag.svg
+"
+                    class="red-flag flag"
+                    style="position: absolute; right: 0px; opacity: 0"
+                  />
+                </div>
+              </div>
+
+              <div
+                class="card-border d-flex justify-content-between card-details shadow"
+               
+              >
+               <div
+              class="d-flex justify-content-center align-items-center w-100 h-100 card-text-wrapper"
+            >
+              <p class="p3 card-text" style="color: #00b224">
+                Deal details
+              </p>
+            </div>
+                <div
+                  class="card-background d-flex justify-content-center align-items-center"
+                  style="background: #00b224; padding: 15px"
+                >
+                  <p class="p3 card-box" style="color: #fff">10%</p>
+                </div>
+              </div>
+            </a>
+            <a
+              href="card.html?category=software"
+              class="w-100 h-100 card-shadow scale-animation card-container flag green-card d-block"
+            >
+               <div class="d-flex justify-content-center align-items-center">
+              <img
+                src="./images/card-1.png"
+                class="w-100 h-100 main-image"
+                style="object-fit: cover"
+              />
+            </div>
+              <p
+                class="p1 cut-text"
+                style="margin-top: 10px; line-height: 28px"
+              >
+                DEWALT 20V MAX Cordless Drill and Impact Driver, Power...
+              </p>
+              <div
+                class="d-flex align-items-center justify-content-between position-relative"
+                style="margin-top: 10px"
+              >
+                <div>
+                  <p class="p4" style="color: #5b5b5b">Was:$239</p>
+                  <h2 class="">$129.00</h2>
+                </div>
+                <div class="active-flag">
+                  <img
+                    src="./images/grren-flag.svg"
+                    class="green-flag flag"
+                    style="opacity: 0; position: absolute; right: 0px"
+                  />
+                  <img
+                    src="./images/orange-flag.svg"
+                    class="orange-flag flag"
+                    style="opacity: 0; position: absolute; right: 0px"
+                  />
+                  <img
+                    src="./images/blue-flag.svg"
+                    class="blue-flag flag"
+                    style="opacity: 0; position: absolute; right: 0px"
+                  />
+                  <img
+                    src="./images/gray-flag.svg"
+                    class="gray-flag flag"
+                    style="position: absolute; right: 0px; opacity: 0"
+                  />
+                  <img
+                    src="./images/red-flag.svg
+"
+                    class="red-flag flag"
+                    style="position: absolute; right: 0px; opacity: 0"
+                  />
+                </div>
+              </div>
+
+              <div
+                class="card-border d-flex justify-content-between card-details shadow"
+               
+              >
+               <div
+              class="d-flex justify-content-center align-items-center w-100 h-100 card-text-wrapper"
+            >
+              <p class="p3 card-text" style="color: #00b224">
+                Deal details
+              </p>
+            </div>
+                <div
+                  class="card-background d-flex justify-content-center align-items-center"
+                  style="background: #00b224; padding: 15px"
+                >
+                  <p class="p3 card-box" style="color: #fff">10%</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div
+            class="d-flex justify-content-between w-100"
+            style="margin-top: 30px"
+          >
+            <div class="d-flex pagination" style="gap: 10px">
+              <img
+                src="./images/left-arrow.svg"
+                class="scale-animation pagination-arrow disabled"
+                style="transform: rotate(180deg)"
+              />
+              <div class="d-flex pagination-items">
+                <div
+                  class="d-flex justify-content-center align-items-center active-page scale-animation"
+                >
+                  <p class="p4">1</p>
+                </div>
+                <div
+                  class="d-flex justify-content-center align-items-center not-active-page scale-animation"
+                >
+                  <p class="p4">2</p>
+                </div>
+                <div
+                  class="d-flex justify-content-center align-items-center not-active-page scale-animation"
+                >
+                  <p class="p4">3</p>
+                </div>
+                <div
+                  class="d-flex justify-content-center align-items-center not-active-page scale-animation"
+                >
+                  <p class="p4">4</p>
+                </div>
+                <div
+                  class="d-flex justify-content-center align-items-center not-active-page scale-animation"
+                >
+                  <p class="p4">5</p>
+                </div>
+                <div
+                  class="d-flex justify-content-center align-items-center not-active-page scale-animation"
+                >
+                  <p class="p4">6</p>
+                </div>
+                <div
+                  class="d-flex justify-content-center align-items-center not-active-page scale-animation"
+                >
+                  <p class="p4">7</p>
+                </div>
+              </div>
+              <img
+                class="scale-animation pagination-arrow"
+                src="./images/left-arrow.svg"
+              />
+            </div>
+           <div class="d-none d-lg-flex align-items-center" style="gap: 10px">
+              <p class="p4">Go to Page</p>
+              <input class="pagination-input" style="opacity: .5;"/>
+
+              <div
+                class="d-flex align-items-center justify-content-center pagination-button scale-animation not-active-page"
+              >
+                <p class="p4" style="color: #5b5b5b">Go</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="w-100 comments-wrapper" style="border-top: 1px solid #ccc">
+        <div class="desktop-container mobile-container">
+          <h1>Latest comments</h1>
+
+          <div class="d-none d-lg-flex justify-content-between" style="margin-top: 15px;">
+             <div
+              class="w-100 h-100 latest-comments-item"
+            >
+              <p class="p5" style="color: #5b5b5b">Added 5 min ago</p>
+              <p class="p5" style="color: #5b5b5b; margin-top: -2px">
+                by J. John
+              </p>
+
+              <div class="d-flex" style="gap: 5px; margin-top: 13px">
+                <img src="./images/star.svg" />
+                <img src="./images/star.svg" />
+                <img src="./images/star.svg" />
+                <img src="./images/star.svg" />
+                <img src="./images/star.svg" style="opacity: 20%" />
+              </div>
+               <a href="card.html?category=software" style="color: #bc0d2a; margin-top: 11px" class="p1 d-block without-hover">
+                DEWALT 20V MAX Cordless Drill
+              </a>
+              <p class="p4" style="margin-top: 2px; line-height: 26px">
+                Drill is fantastic! Both tools are powerful, lightweight, and
+                easy to handle.
+              </p>
+            </div>
+             <div
+              class="w-100 h-100 latest-comments-item"
+            >
+              <p class="p5" style="color: #5b5b5b">Added 5 min ago</p>
+              <p class="p5" style="color: #5b5b5b; margin-top: -2px">
+                by J. John
+              </p>
+
+              <div class="d-flex" style="gap: 5px; margin-top: 13px">
+                <img src="./images/star.svg" />
+                <img src="./images/star.svg" />
+                <img src="./images/star.svg" />
+                <img src="./images/star.svg" />
+                <img src="./images/star.svg" style="opacity: 20%" />
+              </div>
+               <a href="card.html?category=software" style="color: #bc0d2a; margin-top: 11px" class="p1 d-block without-hover">
+                DEWALT 20V MAX Cordless Drill
+              </a>
+              <p class="p4" style="margin-top: 2px; line-height: 26px">
+                Drill is fantastic! Both tools are powerful, lightweight, and
+                easy to handle.
+              </p>
+            </div>
+             <div
+              class="w-100 h-100 latest-comments-item"
+            >
+              <p class="p5" style="color: #5b5b5b">Added 5 min ago</p>
+              <p class="p5" style="color: #5b5b5b; margin-top: -2px">
+                by J. John
+              </p>
+
+              <div class="d-flex" style="gap: 5px; margin-top: 13px">
+                <img src="./images/star.svg" />
+                <img src="./images/star.svg" />
+                <img src="./images/star.svg" />
+                <img src="./images/star.svg" />
+                <img src="./images/star.svg" style="opacity: 20%" />
+              </div>
+               <a href="card.html?category=software" style="color: #bc0d2a; margin-top: 11px" class="p1 d-block without-hover">
+                DEWALT 20V MAX Cordless Drill
+              </a>
+              <p class="p4" style="margin-top: 2px; line-height: 26px">
+                Drill is fantastic! Both tools are powerful, lightweight, and
+                easy to handle.
+              </p>
+            </div>
+             <div
+              class="w-100 h-100 latest-comments-item"
+            >
+              <p class="p5" style="color: #5b5b5b">Added 5 min ago</p>
+              <p class="p5" style="color: #5b5b5b; margin-top: -2px">
+                by J. John
+              </p>
+
+              <div class="d-flex" style="gap: 5px; margin-top: 13px">
+                <img src="./images/star.svg" />
+                <img src="./images/star.svg" />
+                <img src="./images/star.svg" />
+                <img src="./images/star.svg" />
+                <img src="./images/star.svg" style="opacity: 20%" />
+              </div>
+               <a href="card.html?category=software" style="color: #bc0d2a; margin-top: 11px" class="p1 d-block without-hover">
+                DEWALT 20V MAX Cordless Drill
+              </a>
+              <p class="p4" style="margin-top: 2px; line-height: 26px">
+                Drill is fantastic! Both tools are powerful, lightweight, and
+                easy to handle.
+              </p>
+            </div>
+             <div
+              class="w-100 h-100 latest-comments-item"
+            >
+              <p class="p5" style="color: #5b5b5b">Added 5 min ago</p>
+              <p class="p5" style="color: #5b5b5b; margin-top: -2px">
+                by J. John
+              </p>
+
+              <div class="d-flex" style="gap: 5px; margin-top: 13px">
+                <img src="./images/star.svg" />
+                <img src="./images/star.svg" />
+                <img src="./images/star.svg" />
+                <img src="./images/star.svg" />
+                <img src="./images/star.svg" style="opacity: 20%" />
+              </div>
+               <a href="card.html?category=software" style="color: #bc0d2a; margin-top: 11px" class="p1 d-block without-hover">
+                DEWALT 20V MAX Cordless Drill
+              </a>
+              <p class="p4" style="margin-top: 2px; line-height: 26px">
+                Drill is fantastic! Both tools are powerful, lightweight, and
+                easy to handle.
+              </p>
+            </div>
+          </div>
+
+          <div class="slider-container d-block d-lg-none position-relative">
+            <div
+              style="
+                position: absolute;
+                height: 100%;
+                width: 40%;
+                z-index: 20;
+                right: -2px;
+              "
+              class="slider-gradient"
+            ></div>
+            <div class="slider-comments">
+              <div class="slide">
+                <div
+                  class="w-100 h-100 comment-card"
+                  style="background: #f9f9f9; padding: 20px; max-height: 257px"
+                >
+                  <p class="p5" style="color: #5b5b5b">Added 5 min ago</p>
+                  <p class="p5" style="color: #5b5b5b; margin-top: -2px">
+                    by J. John
+                  </p>
+
+                  <div class="d-flex" style="gap: 5px; margin-top: 13px">
+                    <img src="./images/star.svg" />
+                    <img src="./images/star.svg" />
+                    <img src="./images/star.svg" />
+                    <img src="./images/star.svg" />
+                    <img src="./images/star.svg" style="opacity: 20%" />
+                  </div>
+                  <a href="card.html?category=software" style="color: #bc0d2a; margin-top: 11px" class="p1">
+                    DEWALT 20V MAX Cordless Drill
+                  </a>
+                  <p class="p4" style="margin-top: 2px; line-height: 26px">
+                    Drill is fantastic! Both tools are powerful, lightweight,
+                    and easy to handle.
+                  </p>
+                </div>
+              </div>
+              <div class="slide">
+                <div
+                  class="w-100 h-100 comment-card"
+                  style="background: #f9f9f9; padding: 20px; max-height: 257px"
+                >
+                  <p class="p5" style="color: #5b5b5b">Added 5 min ago</p>
+                  <p class="p5" style="color: #5b5b5b; margin-top: -2px">
+                    by J. John
+                  </p>
+
+                  <div class="d-flex" style="gap: 5px; margin-top: 13px">
+                    <img src="./images/star.svg" />
+                    <img src="./images/star.svg" />
+                    <img src="./images/star.svg" />
+                    <img src="./images/star.svg" />
+                    <img src="./images/star.svg" style="opacity: 20%" />
+                  </div>
+                  <a href="card.html?category=software" style="color: #bc0d2a; margin-top: 11px" class="p1">
+                    DEWALT 20V MAX Cordless Drill
+                  </a>
+                  <p class="p4" style="margin-top: 2px; line-height: 26px">
+                    Drill is fantastic! Both tools are powerful, lightweight,
+                    and easy to handle.
+                  </p>
+                </div>
+              </div>
+              <div class="slide">
+                <div
+                  class="w-100 h-100 comment-card"
+                  style="background: #f9f9f9; padding: 20px; max-height: 257px"
+                >
+                  <p class="p5" style="color: #5b5b5b">Added 5 min ago</p>
+                  <p class="p5" style="color: #5b5b5b; margin-top: -2px">
+                    by J. John
+                  </p>
+
+                  <div class="d-flex" style="gap: 5px; margin-top: 13px">
+                    <img src="./images/star.svg" />
+                    <img src="./images/star.svg" />
+                    <img src="./images/star.svg" />
+                    <img src="./images/star.svg" />
+                    <img src="./images/star.svg" style="opacity: 20%" />
+                  </div>
+                  <a href="card.html?category=software" style="color: #bc0d2a; margin-top: 11px" class="p1">
+                    DEWALT 20V MAX Cordless Drill
+                  </a>
+                  <p class="p4" style="margin-top: 2px; line-height: 26px">
+                    Drill is fantastic! Both tools are powerful, lightweight,
+                    and easy to handle.
+                  </p>
+                </div>
+              </div>
+              <div class="slide">
+                <div
+                  class="w-100 h-100 comment-card"
+                  style="background: #f9f9f9; padding: 20px; max-height: 257px"
+                >
+                  <p class="p5" style="color: #5b5b5b">Added 5 min ago</p>
+                  <p class="p5" style="color: #5b5b5b; margin-top: -2px">
+                    by J. John
+                  </p>
+
+                  <div class="d-flex" style="gap: 5px; margin-top: 13px">
+                    <img src="./images/star.svg" />
+                    <img src="./images/star.svg" />
+                    <img src="./images/star.svg" />
+                    <img src="./images/star.svg" />
+                    <img src="./images/star.svg" style="opacity: 20%" />
+                  </div>
+                  <a href="card.html?category=software" style="color: #bc0d2a; margin-top: 11px" class="p1">
+                    DEWALT 20V MAX Cordless Drill
+                  </a>
+                  <p class="p4" style="margin-top: 2px; line-height: 26px">
+                    Drill is fantastic! Both tools are powerful, lightweight,
+                    and easy to handle.
+                  </p>
+                </div>
+              </div>
+              <div class="slide">
+                <div
+                  class="w-100 h-100 comment-card"
+                  style="background: #f9f9f9; padding: 20px; max-height: 257px"
+                >
+                  <p class="p5" style="color: #5b5b5b">Added 5 min ago</p>
+                  <p class="p5" style="color: #5b5b5b; margin-top: -2px">
+                    by J. John
+                  </p>
+
+                  <div class="d-flex" style="gap: 5px; margin-top: 13px">
+                    <img src="./images/star.svg" />
+                    <img src="./images/star.svg" />
+                    <img src="./images/star.svg" />
+                    <img src="./images/star.svg" />
+                    <img src="./images/star.svg" style="opacity: 20%" />
+                  </div>
+                  <a href="card.html?category=software" style="color: #bc0d2a; margin-top: 11px" class="p1">
+                    DEWALT 20V MAX Cordless Drill
+                  </a>
+                  <p class="p4" style="margin-top: 2px; line-height: 26px">
+                    Drill is fantastic! Both tools are powerful, lightweight,
+                    and easy to handle.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        id="back-to-top"
+        class="button-shadow w-100 d-flex justify-content-center align-items-center"
+        style="height: 53px; gap: 10px; margin-top: 40px"
+      >
+      <div class="d-flex scale-animation" style="gap: 10px;">
+        <img src="./images/red-arrow.svg" />
+        <p class="p3 gradient-text">Back to top</p>
+      </div>
+      </div>
+
+      <div class="footer-shadow w-100" style="background: #fff">
+        <div
+          class="desktop-container flex-column flex-lg-row d-flex justify-content-between align-items-center footer-wrapper"
+        >
+          <div>
+            <img src="./images/logo.svg" style="width: 230px" />
+            <p class="d-none d-lg-block p4" style="margin-top: 22px">
+              © 2024. All rights reserved
+            </p>
+          </div>
+
+          <div
+            class="d-none d-lg-flex align-items-center"
+            style="gap: 78px; margin-bottom: 5px"
+          >
+            <div class="d-flex flex-column" style="gap: 6px">
+              <a href="index.html" class="p4">Index</a>
+              <a class="p4">Today deals</a>
+              <a class="p4">Top menu</a>
+              <a class="p4">Submit deal</a>
+              <a href="privacy-notice.html" class="p4">Privacy Notice</a>
+            </div>
+
+            <div class="d-flex flex-column" style="gap: 6px">
+              <a href="electronics.html" class="p4" style="color: #5b5b5b"
+                >Electronics</a
+              >
+              <a href="home-&-garden.html" class="p4" style="color: #5b5b5b"
+                >Home & Garden</a
+              >
+              <a href="tools-&-machinery.html" class="p4" style="color: #5b5b5b"
+                >Tools & Machinery</a
+              >
+              <a href="toys.html" class="p4" style="color: #5b5b5b">Toys</a>
+              <a href="sporting-goods.html" class="p4" style="color: #5b5b5b"
+                >Sporting Goods</a
+              >
+            </div>
+
+            <div class="d-flex flex-column" style="max-width: 152px; gap: 6px">
+              <a
+                href="clothing-shoes-&-accessories.html"
+                class="p4"
+                style="color: #5b5b5b; line-height: 23px"
+                >Clothing, Shoes & Accessories</a
+              >
+              <a
+                href="jewelry-&-watches.html"
+                class="p4"
+                style="color: #5b5b5b; line-height: 23px"
+                >Jewelry & Watches</a
+              >
+              <a href="motors.html" class="p4" style="color: #5b5b5b">Motors</a>
+              <a href="software.html" class="p4" style="color: #5b5b5b"
+                >Software</a
+              >
+            </div>
+          </div>
+
+          <div
+            class="d-flex flex-column-reverse flex-lg-column"
+            style="margin-bottom: 10px"
+          >
+            <p class="d-lg-none p4 text-center" style="margin-top: 25px">
+              © 2024. All rights reserved
+            </p>
+
+            <a href="privacy-notice.html" class="d-lg-none p4 text-center" style="margin-top: 52px">
+              Privacy Notice
+            </a>
+
+            <p class="p3 d-none d-lg-inline">Social media</p>
+
+            <div class="d-flex footer-social">
+              <img src="./images/Facebook.svg" class="scale-animation" />
+              <img src="./images/LinkedIn.svg" class="scale-animation" />
+              <img src="./images/Twiter.svg" class="scale-animation" />
+              <img src="./images/Pinterest.svg" class="scale-animation" />
+              <img src="./images/Mail.svg" class="scale-animation" />
+            </div>
+            <div
+              class="d-flex flex-column flex-lg-column text-center text-lg-start"
+            >
+              <p class="p3 our-goal">Our goal</p>
+              <p class="p5 fw-normal fw-lg-bold" style="max-width: 314px">
+                is to save your money shopping online. We already found deals
+                you've looked for.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./main.js"></script>
+  </body>
+</html>
